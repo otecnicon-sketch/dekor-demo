@@ -78,7 +78,7 @@
   .hero__back img { position: absolute; max-width: none; width: 112%; height: 112%; left: -6%; top: -6%; object-fit: cover; object-position: 0% 50%; } /* кадр прижат к левому краю: пустая стена под текстом шире */
   .hero__card { --w: clamp(160px, 13vw, 200px); --r: clamp(1.5rem, 4vw, 5rem); --t: clamp(5.5rem, 11vh, 8rem); }
   .hero__card figure { position: absolute; right: var(--r); top: var(--t); width: var(--w); padding: .45rem .45rem .6rem; border-radius: calc(var(--v-radius) - 4px);
-    background: var(--v-surface); box-shadow: 0 0 0 1px rgb(232 180 174 / .45), 0 0 0 6px rgb(232 180 174 / .16), 0 30px 60px rgb(43 21 23 / .55); transform: rotate(4deg); }
+    background: var(--v-surface); box-shadow: 0 30px 60px rgb(2 6 4 / .55); transform: rotate(4deg); }
   .hero__card img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: calc(var(--v-radius) - 7px); display: block; }
   .hero__card figcaption { margin-top: .55rem; font-size: var(--v-t-xs); line-height: 1.35; color: var(--v-ink-soft); }
   .hero__card figcaption b { display: block; color: var(--v-ink); font-weight: 500; }
@@ -93,7 +93,7 @@
   .chat__who b { font-weight: 500; }
   .chat__who span { font-size: .7rem; color: var(--v-accent); }
   .chat__msg { position: relative; max-width: 88%; padding: .45rem .6rem 1.05rem; border-radius: .95rem .95rem .95rem .3rem; background: #0d1611; }
-  .chat__msg img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%; border-radius: .6rem; margin-bottom: .4rem; box-shadow: 0 0 0 1px rgb(232 180 174 / .35); }
+  .chat__msg img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%; border-radius: .6rem; margin-bottom: .4rem; }
   .chat__msg time { position: absolute; right: .6rem; bottom: .3rem; font-size: .62rem; color: var(--v-ink-soft); }
   .chat__msg--me { margin: .45rem 0 0 auto; width: max-content; padding-right: 4.6rem; padding-bottom: .45rem; border-radius: .95rem .95rem .3rem .95rem; background: rgb(232 180 174 / .18); }
   .chat__msg--me time { bottom: .42rem; color: var(--v-accent); }
@@ -116,11 +116,11 @@
     .hero__scrim { background: linear-gradient(to bottom, rgb(15 26 20 / .94) 0%, rgb(15 26 20 / .8) 44%, transparent 66%); }
     .hero__floor { height: 14%; }
     .hero__card { --w: 27vw; --r: 5vw; --t: auto; }
-    .hero__card figure { top: auto; bottom: 7vh; box-shadow: 0 0 0 1px rgb(232 180 174 / .45), 0 0 0 5px rgb(232 180 174 / .16), 0 18px 36px rgb(43 21 23 / .55); padding: .35rem .35rem .45rem; transform: rotate(-4deg); }
+    .hero__card figure { top: auto; bottom: 7vh; box-shadow: 0 18px 36px rgb(2 6 4 / .55); padding: .35rem .35rem .45rem; transform: rotate(-4deg); }
     .hero__card figcaption { display: none; }
     .hero__card figure { display: none; }
     .hero__chat { --cw: min(58vw, 236px); }
-    .chat { right: 4vw; top: auto; bottom: 4.5vh; transform: rotate(-2.5deg); font-size: .78rem; box-shadow: 0 0 0 1px rgb(232 180 174 / .4), 0 18px 36px rgb(43 21 23 / .55); }
+    .chat { right: 4vw; top: auto; bottom: 4.5vh; transform: rotate(-2.5deg); font-size: .78rem; box-shadow: 0 18px 36px rgb(2 6 4 / .55); }
     .chat__msg img { aspect-ratio: 16 / 10; }
     .hero__copy { top: clamp(5.5rem, 11vh, 7rem); bottom: auto; max-width: none; }
     .hero__copy .v-display { font-size: var(--v-t-2xl); max-width: none; }
@@ -169,7 +169,7 @@
      k – доля раскрытия своей карточки; w – выход готового букета. Ось вращения далеко под карточкой (250 %): веер идёт дугой, низ карточек расходится */
   .fan__card { --k: clamp(0, calc((var(--v-p, 0) - var(--s)) / .3), 1); --w: clamp(0, calc((var(--v-p, 0) - .58) / .24), 1);
     position: absolute; left: 27%; bottom: 6%; width: 46%; aspect-ratio: 3 / 4; transform-origin: 50% 250%; /* left = (100 − 46) / 2: у figure margin обнулён движком, центрируем через left */
-    border-radius: var(--v-radius); overflow: hidden; background: var(--v-surface); box-shadow: 0 24px 48px rgb(43 21 23 / .55), inset 0 0 0 1px rgb(232 180 174 / .45), inset 0 0 0 6px rgb(232 180 174 / .16);
+    border-radius: var(--v-radius); overflow: hidden; background: var(--v-surface); box-shadow: 0 24px 48px rgb(2 6 4 / .55);
     transform: translateX(calc(var(--k) * var(--tx))) rotate(calc(var(--a0) * (1 - var(--k)) + var(--a1) * var(--k))) translateY(calc(var(--k) * -6% + var(--w) * 5%));
     opacity: calc(1 - .6 * var(--w)); will-change: transform, opacity; }
   .fan__card img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -274,7 +274,7 @@
 
   /* ---- свадьба и офис: фото со шторкой и факты --------------------------------- */
   .ev { display: grid; grid-template-columns: .9fr 1.1fr; gap: var(--v-9); align-items: center; }
-  .ev__fig { position: relative; border-radius: var(--v-radius); overflow: hidden; aspect-ratio: 3 / 4; box-shadow: var(--v-e2), var(--v-edge), 0 0 0 1px rgb(232 180 174 / .45), 0 0 0 6px rgb(232 180 174 / .16); }
+  .ev__fig { position: relative; border-radius: var(--v-radius); overflow: hidden; aspect-ratio: 3 / 4; box-shadow: var(--v-e2), var(--v-edge); }
   .ev__fig img { width: 100%; height: 100%; object-fit: cover; }
   .ev__fig figcaption { position: absolute; left: var(--v-5); right: var(--v-5); bottom: var(--v-5); z-index: 1; font-size: var(--v-t-sm); color: var(--v-ink); max-width: 30ch; }
   .ev__fig::after { content: ""; position: absolute; inset: auto 0 0 0; height: 45%; background: linear-gradient(to top, rgb(15 26 20 / .85), rgb(15 26 20 / .3) 55%, transparent); pointer-events: none; }
